@@ -14,15 +14,17 @@ export const getBooks = createAsyncThunk(
 
 const bookSlice = createSlice({
   name: "book",
-  initialState: { books: null },
+  initialState: { books: null, isLoading: false },
   extraReducers: {
     [getBooks.pending]: (state, action) => {
-      console.log(action);
+      state.isLoading = true;
     },
     [getBooks.fulfilled]: (state, action) => {
-      console.log(action);
+      state.isLoading = false;
+      state.books = action.payLoad
     },
     [getBooks.rejected]: (state, action) => {
+      state.isLoading = false;
       console.log(action);
     },
   },

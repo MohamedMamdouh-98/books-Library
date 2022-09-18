@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Addform = () => {
+const AddForm = () => {
   return (
     <div className='row'>
       <div className='col-6 offset-3 mt-3'>
@@ -32,4 +32,4 @@ const Addform = () => {
   );
 };
 
-export default Addform;
+export default AddForm;

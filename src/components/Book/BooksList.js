@@ -1,26 +1,22 @@
-import React from "react";
+import React from 'react';
 
-const BooksList = ({ isLoading, books }) => {
-  const booksItem = books && books.map((item) => {
-    <li
-      key={item.id}
-      className="list-group-item d-flex  justify-content-between align-items-center"
-    >
-      <div>{item.title}</div>
-      <div className="btn-group" role="group">
-        <button type="button" className="btn btn-primary">
-          Read
-        </button>
-        <button type="button" className="btn btn-danger">
-          Delete
-        </button>
-      </div>
-    </li>;
-  });
+const BooksList = () => {
   return (
     <div>
       <h2>Books List</h2>
-      {isLoading ? "loading..." : <ul className="list-group">{booksItem}</ul>}
+      <ul className='list-group'>
+        <li className='list-group-item d-flex  justify-content-between align-items-center'>
+          <div>Cras justo odio</div>
+          <div className='btn-group' role='group'>
+            <button type='button' className='btn btn-primary'>
+              Read
+            </button>
+            <button type='button' className='btn btn-danger'>
+              Delete
+            </button>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };

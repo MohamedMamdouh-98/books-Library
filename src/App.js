@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import Header from './components/Header';
 import Container from './components/Container';
@@ -7,13 +7,13 @@ import BookContainer from './components/Book/BookContainer';
 
 const App = () => {
   return (
-    <Fragment>
+    <>
       <Header />
       <Container>
         <AddForm />
         <BookContainer />
       </Container>
-    </Fragment>
+    </>
   );
 };
 

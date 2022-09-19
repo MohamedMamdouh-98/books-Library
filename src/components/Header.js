@@ -2,12 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 const Header = () => {
   const { error } = useSelector((state) => state.books);
-
   return (
     <>
-        <div className="alert alert-danger mb-0" role="alert">
+      {error && (
+        <div class="alert alert-danger mb-0" role="alert">
           {error}
         </div>
+      )}
+
       <nav className="navbar navbar-dark bg-dark">
         <span className="navbar-brand mb-0 h1">My Books</span>
 

@@ -2,7 +2,6 @@ import React from "react";
 
 const BooksList = ({ isLoading, books }) => {
   const bookList =
-    books &&
     books.map((item) => (
       <li
         key={item.id}

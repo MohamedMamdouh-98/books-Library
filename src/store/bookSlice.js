@@ -3,14 +3,14 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 //call Api
 export const getBooks = createAsyncThunk(
   "book/getBooks",
-  async (data, thunkAPI) => {
-    const { rejectWithValue } = thunkAPI;
+  async (_, thunkAPI) => {
+  const {rejectWithValue}= thunkAPI
     try {
       const res = await fetch("http://localhost:3005/books");
       const data = await res.json();
       return data;
     } catch (error) {
-      rejectWithValue(error.message);
+      return rejectWithValue(error.message);
     }
   }
 );
@@ -22,13 +22,12 @@ const bookSlice = createSlice({
   extraReducers: {
     [getBooks.pending]: (state, action) => {
       state.isLoading = true;
-      state.error = null;
+      state.error = null
     },
 
     [getBooks.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.books = action.payload;
-      state.error = null;
     },
 
     [getBooks.rejected]: (state, action) => {

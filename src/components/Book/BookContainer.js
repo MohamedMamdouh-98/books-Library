@@ -9,6 +9,9 @@ const PostContainer = () => {
 
 const {isLoading, books}=useSelector((state=> state.books))
 
+const {isLogIn} = useSelector((state) => state.auth)
+
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +22,7 @@ const {isLoading, books}=useSelector((state=> state.books))
       <hr className="my-5" />
       <div className="row">
         <div className="col">
-          <BooksList isLoading={isLoading} books={books}/>
+          <BooksList isLoading={isLoading} books={books} isLogIn={isLogIn}/>
         </div>
         <div className="col side-line">
           <BookInfo />
